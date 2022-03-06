@@ -5,9 +5,9 @@ POLKIT_DIR := /etc/polkit-1/rules.d
 POLKIT_RULE := swhkd.rules
 TARGET_DIR := /usr/bin
 
-all: setup clean glibc
+all: build
 
-build:
+build: setup clean glibc
 	@cargo build $(BUILDFLAGS) --target=x86_64-unknown-linux-musl
 	@cp ./target/x86_64-unknown-linux-musl/release/$(DAEMON_BINARY) ./bin/$(DAEMON_BINARY)
 	@cp ./target/x86_64-unknown-linux-musl/release/$(SERVER_BINARY) ./bin/$(SERVER_BINARY)
