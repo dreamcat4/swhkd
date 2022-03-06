@@ -5,7 +5,7 @@ POLKIT_DIR := /etc/polkit-1/rules.d
 POLKIT_RULE := swhkd.rules
 TARGET_DIR := /usr/bin
 
-all: build
+all: setup build
 
 build:
 	@cargo build $(BUILDFLAGS) --target=x86_64-unknown-linux-musl
